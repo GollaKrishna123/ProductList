@@ -1,6 +1,7 @@
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import { useEffect, useState } from 'react';
+import ProductList from './components/ProductList';
 
 function App() {
   const [products, setProducts] = useState([])
@@ -15,16 +16,8 @@ function App() {
   }
 
   return (
-    <div className="App">
-      {products.map((product) =>
-        <div className="product-card" key={product.id}>
-          <div>
-            <img className="product-card-image" src={product.image} />
-            <h3 className="product-card-title">{product.title}</h3>
-            <h3 className="product-card-price">${product.price}</h3>
-          </div>
-        </div>
-      )}
+    <div>
+      <ProductList products={products}/>
     </div>
   );
 }
